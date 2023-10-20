@@ -6,16 +6,24 @@
         {
             Console.Write("What is the number? ");
             string numberAsString = Console.ReadLine();
-
             int number = int.Parse(numberAsString);
+
             for (int i = 1; i <= number; i++)
             {
-                // Block
+                /* 1
                 bool isOdd = i % 2 == 0;
                 if (isOdd)
                 {
                     Console.WriteLine(i);
                 }
+                */
+
+                bool isEven = i % 2 == 1;
+                if (isEven)
+                {
+                    continue;
+                }
+                Console.WriteLine(i);
             }
 
             SamplesWithSwitch();
