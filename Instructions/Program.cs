@@ -8,22 +8,23 @@
             string numberAsString = Console.ReadLine();
             int number = int.Parse(numberAsString);
 
+            Console.Write("What is the stop number? ");
+            string stopNumberAsString = Console.ReadLine();
+            int stopNumber = int.Parse(stopNumberAsString);
+
             for (int i = 1; i <= number; i++)
             {
-                /* 1
+                if (i == stopNumber)
+                {
+                    break;
+                }
+
                 bool isOdd = i % 2 == 0;
                 if (isOdd)
                 {
                     Console.WriteLine(i);
                 }
-                */
-
-                bool isEven = i % 2 == 1;
-                if (isEven)
-                {
-                    continue;
-                }
-                Console.WriteLine(i);
+                
             }
 
             SamplesWithSwitch();
