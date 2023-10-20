@@ -1,32 +1,26 @@
-﻿namespace Instructions
+﻿using Microsoft.VisualBasic;
+
+namespace Instructions
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("What is the number? ");
-            string numberAsString = Console.ReadLine();
-            int number = int.Parse(numberAsString);
+            int[] ints = { 1, 2, 3 };
+            string[] strings = { "test", "test2", "test3" };
 
-            Console.Write("What is the stop number? ");
-            string stopNumberAsString = Console.ReadLine();
-            int stopNumber = int.Parse(stopNumberAsString);
-
-            for (int i = 1; i <= number; i++)
+            for (int i = 0; i < ints.Length; i++)
             {
-                if (i == stopNumber)
-                {
-                    break;
-                }
-
-                bool isOdd = i % 2 == 0;
-                if (isOdd)
-                {
-                    Console.WriteLine(i);
-                }
-                
+                int element = ints[i];
+                Console.WriteLine(element);
             }
 
+            foreach (var item in ints)
+            {
+                Console.WriteLine(item);
+            }
+
+            SamplesWithFor();
             SamplesWithSwitch();
             SamplesWithIf();
             Console.WriteLine("Hello, World!");
@@ -104,6 +98,31 @@
             else
             {
                 Console.WriteLine("Please enter a valid numeric option.");
+            }
+        }
+
+        public static void SamplesWithFor()
+        {
+            Console.Write("What is the number? ");
+            string numberAsString = Console.ReadLine();
+            int number = int.Parse(numberAsString);
+
+            Console.Write("What is the stop number? ");
+            string stopNumberAsString = Console.ReadLine();
+            int stopNumber = int.Parse(stopNumberAsString);
+
+            for (int i = 1; i <= number; i++)
+            {
+                if (i == stopNumber)
+                {
+                    return;
+                }
+
+                bool isOdd = i % 2 == 0;
+                if (isOdd)
+                {
+                    Console.WriteLine(i);
+                }
             }
         }
     }
